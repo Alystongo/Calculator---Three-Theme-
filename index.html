@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+	
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		</script>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+		
+		<style>
+		
+			*{
+				font-family: 'Lora', serif;
+				margin-top: 1px;
+				color: black;
+			}
+			#all{
+				
+				display: flex;
+				flex-direction: column;
+				
+			} 
+			body{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #7B68EE;
+				
+			}
+			#font{
+			
+			background-color: #C0C0C0;
+			
+			border: none;
+			border-radius: 15px;
+			
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-left: 0.2em;
+			}
+			
+			#tema1{display: none;}
+			
+			
+			p{
+				font-size: 1.3em;
+				padding-top: 0.5em;
+				text-align: center;
+				
+				color: ;
+			}
+			label{
+			
+			display: inline-block;
+			
+			background-color: #4F4F4F;
+			border: none;
+			border-radius: 15px;
+			padding: 0.2em 0.5em;
+			
+			}
+			#op{
+				padding:0;
+				margin: 0;
+				
+				font-size: 1.2em;
+				color: white;
+				font-family: none;
+			}
+			#visu{
+				
+				font-size: 22px;
+				
+				background-color: #4F4F4F;
+				display: inline-block;
+				border: none;
+				border-radius: 15px;
+				
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				
+				text-align: center;
+				padding-left: 0.8em;
+				
+				color: white;
+			}
+			
+			h2{
+				float: left;
+				padding-right: 7.5em;
+				height: auto;
+			}
+			
+			#one{
+				
+				padding-top: 0.5em;
+				padding-bottom: 0.5em;
+			
+			}
+			.button {
+			
+			
+			display: inline-block;
+			padding: 3em 3.5em;
+			font-size: 10px;
+			text-align: center;
+			text-shadow: 3px 3px 10px ;
+			text-decoration: none;
+			outline: none;
+			color: #000000;
+			background-color: #FFFAFA;
+			border: none;
+			border-radius: 15px;
+			}
+			
+			
+			.button:active {
+			transform: translateY(4px);
+			}
+			
+			.overlay {
+			height: 0%;
+			width: 100%;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: rgb(0,0,0);
+			background-color: rgba(0,0,0, 0.9);
+			overflow-y: hidden;
+			transition: 0.9s;
+			}
+			
+			.overlay-content {
+			position: relative;
+			top: 25%;
+			width: 100%;
+			text-align: center;
+			margin-top: 30px;
+			}
+			
+			.overlay a {
+			padding: 8px;
+			text-decoration: none;
+			font-size: 36px;
+			color: red;
+			display: block;
+			transition: 0.3s;
+			}
+			
+			.overlay a:hover, .overlay a:focus {
+			color: #f1f1f1;
+			}
+			
+			.overlay .closebtn {
+			position: absolute;
+			top: 20px;
+			right: 45px;
+			font-size: 60px;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+	
+		<div id="myNav" class="overlay">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<div class="overlay-content">
+				<a id="tema1" href="#">Theme SlateBlue</a>
+				<a id="tema2" href="#" >Theme Gold</a>
+				<a id="tema3" href="#">Theme DarkGreen</a>
+			</div>
+		</div>
+		
+		<div id="all">
+			<div id="cab">
+				<h2>Calc</h2>
+				<span style="font-size:30px;cursor:pointer" onclick="openNav()">THEME</span>
+			</div><br>
+			<label > <label id="op"></label>  <input id="visu" type="text" value=" " disabled>  </label>
+		
+			<br><div id="font">
+				<div id="one">
+					<input type="button" name="btn" value="7" class="button">
+					<input type="button" name="btn" value="8" class="button">
+					<input type="button" name="btn" value="9" class="button">
+					<input type="button" id="btnDel" name="btnDel" value="DEL" class="button" style="padding: 3em 2.9em; background-color:#008080;"><br>
+			
+					<br><input type="button" name="btn" value="6" class="button"> 
+					<input type="button" name="btn" value="5" class="button">
+					<input type="button" name="btn" value="4" class="button">
+					<input type="button" name="btnMas" value="+" class="button"><br>
+			
+					<br><input type="button" name="btn" value="3" class="button">
+					<input type="button" name="btn" value="2" class="button">
+					<input type="button" name="btn" value="1" class="button">
+					<input type="button" name="btnMen" value="-" class="button"><br>
+			
+					<br><input type="button" name="btn" value="." class="button">
+					<input type="button" name="btn" value="0" class="button">
+					<input type="button" name="btnDiv" value="/" class="button">
+					<input type="button" name="btnMult" value="*" class="button"><br>
+			
+					<br><input type="button" id="btnRe" name="btnRe" value="RESET" class="button" style="width: 49%; background-color:#008080;">
+					<input type="button" id="btnIg" name="btnIg" value="=" class="button" style="width: 49%; background-color: #FF00FF">
+				</div>
+			</div>
+			
+		</div>
+		
+		<script src="script.js"></script>
+		
+		
+		<script>
+		
+			$(document).ready(function () {
+				$("#tema2").click(function() {
+					$('body').css({ backgroundColor: "#FFD700" });
+					
+					$('#btnDel').css({backgroundColor: "#9400D3" });
+					$('#btnRe').css({backgroundColor: "#9400D3"});
+					$('#btnIg').css({backgroundColor: "#FF1493" });
+					
+					$("#tema2").hide();
+					$("#tema3").show();
+					$("#tema1").show();
+					
+					
+				});
+				
+				$("#tema3").click(function() {
+					$('body').css({ backgroundColor: "#006400" });
+					$('h2').css({ color: "#00000" }); //Só pra saber que da pra mudar os outro também
+					
+					$('#btnDel').css({backgroundColor: "#00FFFF" });
+					$('#btnRe').css({backgroundColor: "#00FFFF"});
+					$('#btnIg').css({backgroundColor: "#6A5ACD" });
+					
+					$("#tema3").hide();
+					$("#tema1").show();
+					$("#tema2").show();
+					
+				});
+				
+				$("#tema1").click(function() {
+					$('body').css({ backgroundColor: "#7B68EE" });
+					
+					$('#btnDel').css({backgroundColor: "#008080" });
+					$('#btnRe').css({backgroundColor: "#008080"});
+					$('#btnIg').css({backgroundColor: "#FF00FF" });
+					
+					$("#tema1").hide();
+					$("#tema2").show();
+					$("#tema3").show();
+				
+				});
+				
+			
+			});
+		
+		function openNav() {
+		document.getElementById("myNav").style.height = "100%";
+		}
+		
+		function closeNav() {
+		document.getElementById("myNav").style.height = "0%";
+		}
+		</script>
+		
+	</body>
+</html>
+
